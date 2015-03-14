@@ -88,7 +88,7 @@ def send_all(msg):
     for client in clients:
         client.put( msg)
 
-def send_all_jason(obj):
+def send_all_json(obj):
     send_all( json.dumps(obj))
 
 def read_ws(ws,client):
@@ -97,8 +97,8 @@ def read_ws(ws,client):
     #code used from in class notes
     try:
         while True:
-            msg = ws.receieve()
-            print "WebSocket Received: %s" % msg
+            msg = ws.receive()
+            #print "WebSocket Received: %s" % msg
             if (msg is not None):
                 packet = json.loads(msg)
                 send_all_json(packet)
@@ -120,7 +120,6 @@ def subscribe_socket(ws):
     try:
         while True:
             msg = client.get()
-            print "Got message"
             ws.send(msg)
     except Exception as e:
         print "WS Error %s" % e
