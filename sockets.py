@@ -73,7 +73,6 @@ class World:
 
 myWorld = World()        
 
-#TODO?
 def set_listener( entity, data ):
     ''' do something with the update ! '''
 
@@ -93,7 +92,6 @@ def send_all_json(obj):
 
 def read_ws(ws,client):
     '''A greenlet function that reads from the websocket and updates the world'''
-    # XXX: TODO IMPLEMENT ME
     #code used from in class notes
     try:
         while True:
@@ -111,7 +109,6 @@ def read_ws(ws,client):
 def subscribe_socket(ws):
     '''Fufill the websocket URL of /subscribe, every update notify the
        websocket and read updates from the websocket '''
-    # XXX: TODO IMPLEMENT ME
     # code also used from in-class notes
     client = Client()
     clients.append(client)
